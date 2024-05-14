@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="Dv1"></span>:
+    <span id="Dv2"></span>:
+    <span id="Dv3"></span>
+
+    <script>
+        function main() {
+            let Dv1 = document.getElementById("Dv1");
+            let Dv2 = document.getElementById("Dv2");
+            let Dv3 = document.getElementById("Dv3");
+            setInterval(DisplayTime, 1000);
+
+            function DisplayTime() {
+                let time = new Date();
+                let hour = time.getHours();
+                let minute = time.getMinutes();
+                let second = time.getSeconds();
+                Dv1.innerHTML = hour;
+                Dv2.innerHTML = minute;
+                Dv3.innerHTML = second;
+            }
+        }
+        window.addEventListener("load", main, false);
+    </script>
+</body>
+</html>
