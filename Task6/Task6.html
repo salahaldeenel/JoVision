@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    function main(){
+        var B1=document.getElementById("B1");
+        B1.addEventListener("click",div_by_3,false);
+
+        var B2=document.getElementById("B2");
+        B2.addEventListener("click",nums_0_150,false);
+
+        var B3=document.getElementById("B3");
+        B3.addEventListener("click",Addition_of_3,false);
+        
+        var B4=document.getElementById("B4");
+        B4.addEventListener("click",ind_20_40,false);
+
+        var B5=document.getElementById("B5");
+        B5.addEventListener("click",Random_Descending,false);
+
+    }
+    function Random_Descending(){
+        var arr=new Array(100);
+        
+        for (var i =0;i<=100;i++){
+            
+            arr[i]=i;
+           }
+           arr=shuffle(arr);
+           for (var i in arr){
+            console.log(arr[i]);
+           }
+           arr=arr.reverse();
+           console.log("---------------------------------")
+           for (var i in arr){
+            console.log(arr[i]);
+           }
+    }
+    
+    function shuffle(arr) {
+        let shuffleArr = [];
+        let usedIndex = [];
+        let i = 0;
+        while (i < arr.length) {
+            let randomNumber = Math.floor(Math.random() * arr.length);
+            if (!usedIndex.includes(randomNumber)) {
+                shuffleArr.push(arr[randomNumber]);
+                usedIndex.push(randomNumber);
+                i++;
+            }
+           
+            if (usedIndex.length === arr.length) {
+                break;
+            }
+        }
+        return shuffleArr;
+    }
+    
+
+
+    function ind_20_40(){
+        var arr=new Array(100);
+        
+        for (var i =1;i<=100;i++){
+            
+            arr[i]=i;
+           }
+           for(i in arr){
+            if(i>=20 &&i<=40)
+            console.log(i);
+           }
+
+    }
+
+    function Addition_of_3(){
+        var arr=new Array(100);
+        
+        for (var i =1;i<=100;i++){
+            
+            arr[i]=i;
+           }
+           for (var  i in arr){
+            
+            console.log(parseInt(i)+3);
+        }
+    }
+
+
+    function nums_0_150(){
+        var arr=new Array(100);
+        
+        for (var i =1;i<=100;i++){
+            
+            arr[i]=i;
+           }
+           for (var i=100;i<=150;i++){
+
+            arr[i]=i;
+           }
+
+           for (var  i in arr){
+            
+            console.log(i);
+        }
+    }
+
+    function div_by_3(){
+        var arr=new Array(100);
+        
+        for (var i =1;i<=100;i++){
+            
+            arr[i]=i;
+           }
+        for (var  i in arr){
+            if(i%3!=0)
+            console.log(i);
+        }
+
+
+    }
+
+
+        window.addEventListener("load",main,false);
+    </script>
+</head>
+<body>
+    <input type="button" value="Div by 3" id="B1">
+    <br> <br>
+    <input type="button" value="0-150" id="B2">
+    <br> <br>
+    <input type="button" value="Additions of 3" id="B3">
+    <br> <br>
+    <input type="button" value="20-40" id="B4">
+    <br> <br>
+    <input type="button" value="Random and Descending" id="B5">
+  
+</body>
+</html>
