@@ -1,1 +1,1 @@
-This is For my internship for JovVision
+These are the required tasks from JoVision
