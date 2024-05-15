@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class SubInfo{
+        
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+                
+            }
+        }
+    function main(){
+    let B1=document.getElementById("B1");
+    B1.addEventListener("click",Submit,false);
+    }
+    function Submit(){
+        let Txt1=document.getElementById("Txt1").value;
+        fetch("https://api.agify.io/?name="+Txt1)
+            .then((res)=>res.json())
+            .then(data => {
+                let age = data.age;
+                let p1 = new SubInfo(Txt1, age);
+                alert("Your Name is: " + p1.name + "\nYour age is: " + p1.age);
+            });
+    }
+
+        window.addEventListener("load",main,false);
+    </script>
+</head>
+<body>
+    <h2>Please enter Your name and age</h2>
+    
+    <h3>name:</h3><input type="textbox" id="Txt1">
+    <br>
+   
+    <input type="button" id="B1" value="Submit">
+
+
+</body>
+</html>
