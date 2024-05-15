@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class SubInfo{
+        
+            constructor(name,age,date){
+                this.name=name;
+                this.age=age;
+                this.date=date;
+            }
+        }
+    function main(){
+    let B1=document.getElementById("B1");
+    B1.addEventListener("click",Submit,false);
+    }
+    function Submit(){
+        let Txt1=document.getElementById("Txt1").value;
+        let Txt2=document.getElementById("Txt2").value;
+        let SubDate=new Date();
+        let currDate=SubDate.toString();
+        let P1=new SubInfo(Txt1,Txt2,currDate);
+        alert("Your name is: " + P1.name + "\nYour age is: " + P1.age + "\n" + P1.date);
+    }
+
+        window.addEventListener("load",main,false);
+    </script>
+</head>
+<body>
+    <h2>Please enter Your name and age</h2>
+    
+    <h3>name:</h3><input type="textbox" id="Txt1">
+    <br>
+    <h3>age:</h3><input type="textbox" id="Txt2">
+    <br>
+    <input type="button" id="B1" value="Submit">
+
+
+</body>
+</html>
